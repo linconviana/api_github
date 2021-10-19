@@ -1,0 +1,23 @@
+criar projeto
+npx create-react-app api_github --template typescript
+
+import router
+yarn add react-router-dom
+
+import axios
+yarn add axios
+
+import bootstrap
+yarn add bootstrap
+
+import no projeto
+import 'bootstrap/dist/css/bootstrap.css';
+
+import sass bootstrap
+yarn add node-sass
+
+import no projeto
+import './custom.scss';
+
+Api github
+https://api.github.com/users/linconviana
