@@ -2,7 +2,7 @@ criar projeto
 npx create-react-app api_github --template typescript
 
 import router
-yarn add react-router-dom
+yarn add react-router-dom @types/react-router-dom
 
 import axios
 yarn add axios
