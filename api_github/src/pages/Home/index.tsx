@@ -1,6 +1,6 @@
 import axios from "axios";
 import { useState } from "react";
-import Navbar from "../../components/Navbar";
+import Modal from "../../components/Modal";
 import "./styles.css";
 
 type GitHubUser = {
@@ -15,6 +15,13 @@ type UserData = {
 };
 
 const Home = () => {
+  const [isModal, setIsModal] = useState(false);
+
+  const showModal = () => {
+    setIsModal(true);
+    alert("show modal");
+  }
+
   const [userData, setUserData] = useState<UserData>();
 
   const [userGit, setUserGit] = useState<GitHubUser>({
@@ -39,12 +46,10 @@ const Home = () => {
     axios
       .get(url)
       .then((response) => {
-        
         if (response.status === 200) setUserData(response.data);
         else alert("Usuário não encontrado");
       })
       .catch((error) => {
-        
         alert("Usuário não encontrado");
       });
   };
@@ -53,6 +58,13 @@ const Home = () => {
     <>
       <div className="row">
         <h1>Bem vindo a Home</h1>
+
+        <br />
+        <div className="col-md-4 mt-4">
+          <button type="button" onClick={showModal}>show Modal</button>
+        </div>
+        <br />
+
         <form onSubmit={handleFormSubmit}>
           <div>
             <div className="col-md-4 mt-4">
@@ -77,10 +89,7 @@ const Home = () => {
         <div className="container mt-5">
           <div className="row">
             <div className="col-md-5">
-              <img
-                src={userData.avatar_url}
-                alt={userData.login}
-              />
+              <img src={userData.avatar_url} alt={userData.login} />
             </div>
             <div className="col-md-7">
               <div className="row">

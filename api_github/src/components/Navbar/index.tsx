@@ -1,3 +1,4 @@
+import "bootstrap/js/src/collapse.js";
 import { Link, NavLink } from "react-router-dom";
 
 const Navbar = () => {
